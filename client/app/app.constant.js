@@ -1,7 +1,7 @@
 (function(angular, undefined) {
 'use strict';
 
-angular.module('testIaestexApp.constants', [])
+angular.module('iaestexApp.constants', [])
 
 .constant('appConfig', {userRoles:['guest','user','admin']})
 

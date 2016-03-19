@@ -39,5 +39,5 @@ class SignupController {
   }
 }
 
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .controller('SignupController', SignupController);

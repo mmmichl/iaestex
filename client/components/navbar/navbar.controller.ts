@@ -17,5 +17,5 @@ class NavbarController {
   }
 }
 
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .controller('NavbarController', NavbarController);

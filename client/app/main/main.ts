@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('main', {

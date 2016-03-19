@@ -25,5 +25,5 @@ class SettingsController {
   }
 }
 
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .controller('SettingsController', SettingsController);

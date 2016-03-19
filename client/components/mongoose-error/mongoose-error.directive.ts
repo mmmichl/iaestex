@@ -3,7 +3,7 @@
 /**
  * Removes server error when user updates input
  */
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .directive('mongooseError', function() {
     return {
       restrict: 'A',

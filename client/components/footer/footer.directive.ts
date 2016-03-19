@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .directive('footer', function() {
     return {
       templateUrl: 'components/footer/footer.html',

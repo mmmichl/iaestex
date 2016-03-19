@@ -183,7 +183,7 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
   return Auth;
 }
 
-angular.module('testIaestexApp.auth')
+angular.module('iaestexApp.auth')
   .factory('Auth', AuthService);
 
 })();

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testIaestexApp.admin', [
-  'testIaestexApp.auth',
+angular.module('iaestexApp.admin', [
+  'iaestexApp.auth',
   'ui.router'
 ]);

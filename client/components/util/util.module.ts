@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('testIaestexApp.util', []);
+angular.module('iaestexApp.util', []);

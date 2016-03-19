@@ -59,7 +59,7 @@ function UtilService($window) {
   return Util;
 }
 
-angular.module('testIaestexApp.util')
+angular.module('iaestexApp.util')
   .factory('Util', UtilService);
 
 })();

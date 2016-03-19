@@ -3,7 +3,7 @@
 describe('Component: mainComponent', function() {
 
   // load the controller's module
-  beforeEach(module('testIaestexApp'));
+  beforeEach(module('iaestexApp'));
   beforeEach(module('stateMock'));
   beforeEach(module('socketMock'));
 

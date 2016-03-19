@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .directive('navbar', () => ({
     templateUrl: 'components/navbar/navbar.html',
     restrict: 'E',

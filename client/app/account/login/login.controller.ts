@@ -29,5 +29,5 @@ class LoginController {
   }
 }
 
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .controller('LoginController', LoginController);

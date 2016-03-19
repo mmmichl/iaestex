@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .factory('Modal', function($rootScope, $uibModal) {
     /**
      * Opens a modal

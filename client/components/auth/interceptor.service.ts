@@ -26,7 +26,7 @@ function authInterceptor($rootScope, $q, $cookies, $injector, Util) {
   };
 }
 
-angular.module('testIaestexApp.auth')
+angular.module('iaestexApp.auth')
   .factory('authInterceptor', authInterceptor);
 
 })();

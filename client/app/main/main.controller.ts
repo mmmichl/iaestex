@@ -33,7 +33,7 @@ class MainController {
   }
 }
 
-angular.module('testIaestexApp')
+angular.module('iaestexApp')
   .component('main', {
     templateUrl: 'app/main/main.html',
     controller: MainController

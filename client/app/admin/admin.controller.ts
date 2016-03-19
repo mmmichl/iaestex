@@ -14,7 +14,7 @@ class AdminController {
   }
 }
 
-angular.module('testIaestexApp.admin')
+angular.module('iaestexApp.admin')
   .controller('AdminController', AdminController);
 
 })();

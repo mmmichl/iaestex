@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('testIaestexApp.auth', [
-  'testIaestexApp.constants',
-  'testIaestexApp.util',
+angular.module('iaestexApp.auth', [
+  'iaestexApp.constants',
+  'iaestexApp.util',
   'ngCookies',
   'ui.router'
 ])

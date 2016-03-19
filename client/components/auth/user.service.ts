@@ -21,7 +21,7 @@ function UserResource($resource) {
   });
 }
 
-angular.module('testIaestexApp.auth')
+angular.module('iaestexApp.auth')
   .factory('User', UserResource);
 
 })();

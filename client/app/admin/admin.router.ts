@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testIaestexApp.admin')
+angular.module('iaestexApp.admin')
   .config(function($stateProvider) {
     $stateProvider
       .state('admin', {

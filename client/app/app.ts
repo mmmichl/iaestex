@@ -4,6 +4,7 @@ angular.module('iaestexApp', [
   'iaestexApp.auth',
   'iaestexApp.admin',
   'iaestexApp.constants',
+  'iaestexApp.myOffer',
   'ngCookies',
   'ngResource',
   'ngSanitize',

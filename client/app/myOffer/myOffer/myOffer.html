@@ -1,0 +1,15 @@
+<div id="my-offer" class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>My Offer <small><a ui-sref="myOfferNew" class="button">New</a></small></h1>
+    </div>
+  </div>
+  <div class="results">
+    <div ng-repeat="offer in vm.offers" class="row">
+      <div class="col-md-2" ng-bind="offer.refNo"></div>
+      <div class="col-md-2" ng-bind="offer.employer.name"></div>
+      <div class="col-md-2" ng-bind="offer.employer.website"></div>
+    </div>
+  </div>
+</div>
+

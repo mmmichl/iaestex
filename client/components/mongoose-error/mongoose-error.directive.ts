@@ -4,7 +4,8 @@
  * Removes server error when user updates input
  */
 angular.module('iaestexApp')
-  .directive('mongooseError', function() {
+  .directive('mongooseError', function(validationMessages) {
+    validationMessages.mongoose = 'Mongoose error';
     return {
       restrict: 'A',
       require: 'ngModel',

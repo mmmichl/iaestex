@@ -7,16 +7,22 @@ class NavbarController {
     'state': 'main'
   }, {
     title: 'My Offer',
-    state: 'myOffer'
+    state: 'myOffer',
+    role: 'user',
   }];
 
   isCollapsed = true;
   //end-non-standard
 
-  constructor(Auth) {
+  constructor(private Auth) {
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
+  }
+
+  hasRole(roles) {
+    if (!roles) { return true; }
+    return this.Auth.hasRole(roles);
   }
 }
 

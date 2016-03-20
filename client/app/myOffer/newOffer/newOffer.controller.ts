@@ -24,7 +24,7 @@
       'Architecture',
     ];
     offer = {
-      origin: 'Austria',
+      origin: null,
       languages: [{}],
       employer: {},
       lodgingBy: 'IAESTE'
@@ -32,7 +32,11 @@
     errors = {};
     submitted = false;
 
-    constructor(private $http: ng.IHttpService) {
+    constructor(private $http: ng.IHttpService, private Auth, private $q) {
+    }
+
+    $onInit() {
+      this.offer.origin = this.Auth.getCurrentUser().institution;
     }
 
     save(form) {

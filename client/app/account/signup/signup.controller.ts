@@ -6,6 +6,16 @@ class SignupController {
   errors = {};
   submitted = false;
   //end-non-standard
+  institutions = [
+    'Austria',
+    'Croatia',
+    'Czech Republic',
+    'Germany',
+    'Hungary',
+    'Slovakia',
+    'Slovenia',
+    'Swiss',
+  ];
 
   constructor(Auth, $state) {
     this.Auth = Auth;
@@ -19,6 +29,7 @@ class SignupController {
       this.Auth.createUser({
         name: this.user.name,
         email: this.user.email,
+        institution: this.user.institution,
         password: this.user.password
       })
       .then(() => {

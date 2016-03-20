@@ -20,4 +20,7 @@ angular.module('iaestexApp', [
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
+  })
+  .run(function (validationMessages) {
+    validationMessages.match = 'Field does not match';
   });

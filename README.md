@@ -1,5 +1,9 @@
 # test-iaestex
 
+Hacking challenge for the weekend. As the nature of a hack, the code is not nice and far from production ;)
+
+[Test server](http://testiaestex-mmmichl.rhcloud.com/)
+
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.4.2.
 
 ## Getting Started

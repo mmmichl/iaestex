@@ -4,12 +4,25 @@
 class MyOfferComponent {
   offers = [{refNo: 'nix'}];
 
-  constructor(private $http) {
+  constructor(private $http, private $uibModal) {
   }
 
   $onInit() {
     this.$http.get('/api/myOffers')
       .then((resp) => this.offers = resp.data);
+  }
+
+  share(offer) {
+    var modalInstance = this.$uibModal.open({
+      templateUrl: 'app/myOffer/myOffer/shareModal.html',
+      controller: 'ShareModalCtrl',
+      size: 'lg',
+      controllerAs: 'vm',
+      resolve: {
+        offer
+      }
+    });
+
   }
 }
 

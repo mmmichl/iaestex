@@ -4,6 +4,9 @@ import mongoose from 'mongoose';
 
 var MyOfferSchema = new mongoose.Schema({
   origin: String,
+  shares: [
+    String
+  ],
   refNo: String,
   faculty: String,
   specialisation: String,

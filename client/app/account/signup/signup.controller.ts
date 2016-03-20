@@ -6,20 +6,12 @@ class SignupController {
   errors = {};
   submitted = false;
   //end-non-standard
-  institutions = [
-    'Austria',
-    'Croatia',
-    'Czech Republic',
-    'Germany',
-    'Hungary',
-    'Slovakia',
-    'Slovenia',
-    'Swiss',
-  ];
+  institutions = [];
 
-  constructor(Auth, $state) {
+  constructor(Auth, $state, private institute) {
     this.Auth = Auth;
     this.$state = $state;
+    this.institutions = this.institute.getAll();
   }
 
   register(form) {

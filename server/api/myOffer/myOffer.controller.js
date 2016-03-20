@@ -61,7 +61,14 @@ function handleError(res, statusCode) {
 
 // Gets a list of MyOffers
 export function index(req, res) {
-  return MyOffer.find().exec()
+  return MyOffer.find({origin: req.user.institution}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+// Gets a list of shared offers
+export function shared(req, res) {
+  return MyOffer.find({shares: req.user.institution}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

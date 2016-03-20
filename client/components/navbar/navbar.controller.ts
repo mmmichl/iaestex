@@ -9,6 +9,10 @@ class NavbarController {
     title: 'My Offer',
     state: 'myOffer',
     role: 'user',
+  }, {
+    title: 'Shared Offer',
+    state: 'sharedOffer',
+    role: 'user',
   }];
 
   isCollapsed = true;

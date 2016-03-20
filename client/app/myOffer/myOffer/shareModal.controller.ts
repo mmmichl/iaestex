@@ -4,8 +4,8 @@
   class ShareModalCtrl {
     private institutions = [];
 
-    constructor(private institute, private $uibModalInstance, private offer, private $http) {
-      this.institutions = institute.getAll();
+    constructor(private institute, private $uibModalInstance, private offer, private $http, private Auth) {
+      this.institutions = _.without(institute.getAll(), Auth.getCurrentUser().institution);
     }
 
     ok() {

@@ -1,5 +1,5 @@
 'use strict';
 
 angular.module('iaestexApp.myOffer', [
-  'ui.router'
+  'ui.router', 'iaestexApp.validation'
 ]);

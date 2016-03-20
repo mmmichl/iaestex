@@ -30,3 +30,7 @@ Run `grunt build` for building and `grunt serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
+## Deploy
+
+Run `grunt build` then `grunt buildcontrol:openshift`

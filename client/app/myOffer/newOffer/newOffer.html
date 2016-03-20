@@ -4,75 +4,203 @@
       <h1>New Offer</h1>
     </div>
     <div class="col-sm-12">
-      <form class="form-horizontal" name="form" ng-submit="vm.save(form)" novalidate>
+      <form class="form-horizontal" name="form" ui-valid-submit="vm.save(form)">
 
-        <div class="form-group" ng-class="{ 'has-success': form.refNo.$valid && vm.submitted,
-                                            'has-error': form.refNo.$invalid && vm.submitted }">
+        <div class="form-group">
           <label class="col-sm-2 control-label">Reference Number</label>
           <div class="col-sm-4">
             <input type="text" name="refNo" class="form-control" ng-model="vm.offer.refNo"
                    required/>
           </div>
-          <p class="help-block" ng-show="form.refNo.$error.required && vm.submitted">
-            The Reference Number is required
-          </p>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-success': form.empName.$valid && vm.submitted,
-                                            'has-error': form.empName.$invalid && vm.submitted }">
-          <label class="col-sm-2 control-label">Employer Name</label>
-          <div class="col-sm-6">
-            <input type="text" name="empName" class="form-control" ng-model="vm.offer.employer.name"
-                   required/>
-          </div>
-          <p class="help-block" ng-show="form.empName.$error.required && vm.submitted">
-            The Employer Name is required
-          </p>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-success': form.empEmail.$valid && vm.submitted,
-                                            'has-error': form.empEmail.$invalid && vm.submitted }">
-          <label class="col-sm-2 control-label">Employer Email</label>
-          <div class="col-sm-6">
-            <input type="email" name="empEmail" class="form-control" ng-model="vm.offer.employer.email"
-                   required/>
-          </div>
-          <p class="help-block" ng-show="form.empEmail.$error.required && vm.submitted">
-            The Employer Email is required
-          </p>
-          <p class="help-block" ng-show="form.empEmail.$error.email && vm.submitted">
-            Doesn't look like a valid email.
-          </p>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-success': form.empWeb.$valid && vm.submitted,
-                                            'has-error': form.empWeb.$invalid && vm.submitted }">
-          <label class="col-sm-2 control-label">Employer Website</label>
-          <div class="col-sm-6">
-            <input type="url" name="empWeb" class="form-control" ng-model="vm.offer.employer.website"
-                   required/>
-          </div>
-          <p class="help-block" ng-show="form.empWeb.$error.required && vm.submitted">
-            The Employer Website is required
-          </p>
-          <p class="help-block" ng-show="form.empWeb.$error.url && vm.submitted">
-            Doesn't look like a valid url.
-          </p>
+          <ui-validation-messages></ui-validation-messages>
         </div>
 
         <hr>
+        <h4>
+          <div class="col-sm-2"></div>
+          Employer
+        </h4>
 
-        <div class="form-group" ng-class="{ 'has-success': form.descr.$valid && vm.submitted,
-                                            'has-error': form.descr.$invalid && vm.submitted }">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Employer Name</label>
+          <div class="col-sm-7">
+            <input type="text" name="empName" class="form-control" ng-model="vm.offer.employer.name"
+                   required/>
+          </div>
+          <ui-validation-messages></ui-validation-messages>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Employer Address</label>
+          <div class="col-sm-4">
+            <textarea type="text" name="empAddress" class="form-control" ng-model="vm.offer.employer.address"
+                      rows="3"
+                      required></textarea>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Employer Email</label>
+          <div class="col-sm-6">
+            <input type="email" name="empEmail" class="form-control" ng-model="vm.offer.employer.email"/>
+          </div>
+          <ui-validation-messages></ui-validation-messages>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Employer Website</label>
+          <div class="col-sm-6">
+            <input type="url" name="empWeb" class="form-control" ng-model="vm.offer.employer.website"/>
+          </div>
+          <ui-validation-messages></ui-validation-messages>
+        </div>
+
+        <hr>
+        <h4><span class="col-sm-2"></span>Student</h4>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Faculty</label>
+          <div class="col-sm-10">
+            <select ng-model="vm.offer.faculty" ng-options="fac for fac in vm.faculties" name="faculty"
+                    class="form-control"
+                    required></select>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Specialisation</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="vm.offer.specialisation" name="specialisation"
+                   class="form-control"
+                   required>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Language</label>
+          <div class="col-sm-10">
+            <div ng-repeat="lang in vm.offer.languages" class="row">
+              <div class="col-sm-2">
+                <select ng-model="lang.language" ng-options="lang for lang in vm.languages" name="lang"
+                        class="form-control"
+                        required></select>
+                <ui-validation-messages></ui-validation-messages>
+              </div>
+              <div class="col-sm-2">
+                <select ng-model="lang.level" ng-options="lev for lev in vm.langLevels" name="langLevel"
+                        class="form-control"
+                        required></select>
+                <ui-validation-messages></ui-validation-messages>
+              </div>
+              <a ng-if="$index > 0" ng-click="vm.offer.languages.splice($index, 1)"
+                 class="glyphicon glyphicon-minus"></a>
+            </div>
+            <a ng-click="vm.offer.languages.push({})"><span class="glyphicon glyphicon-plus"></span> More Languages</a>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Study Level</label>
+          <div class="col-sm-10">
+            <label><input type="checkbox"> Beginning (1-3 Sem)</label>
+            <label><input type="checkbox"> Middle (4-6 Sem)</label>
+            <label><input type="checkbox"> End (7+ Sem)</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Other Requirements</label>
+          <div class="col-sm-5">
+            <textarea type="text" name="otherReq" class="form-control" ng-model="vm.offer.otherReq"
+                      rows="3"
+                      required></textarea>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+        </div>
+
+
+        <hr>
+        <h4><span class="col-sm-2"></span>Work</h4>
+
+        <div class="form-group">
           <label class="col-sm-2 control-label">Description</label>
           <div class="col-sm-10">
             <textarea name="descr" class="form-control" ng-model="vm.offer.descr"
                       rows="10"
                       required></textarea>
+            <ui-validation-messages></ui-validation-messages>
           </div>
-          <p class="help-block" ng-show="form.descr.$error.required && vm.submitted">
-            The Description is required
-          </p>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Weeks min</label>
+          <div class="col-sm-1">
+            <input type="text" ng-model="vm.offer.minWeeks" name="minWeeks"
+                   class="form-control text-right"
+                   required>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+          <label class="col-sm-1 control-label text-right">max</label>
+          <div class="col-sm-1">
+            <input type="text" ng-model="vm.offer.maxWeeks" name="maxWeeks"
+                   class="form-control text-right"
+                   required>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Within from</label>
+          <div class="col-sm-2">
+            <input type="text" ng-model="vm.offer.minDate" name="minDate"
+                   class="form-control text-right"
+                   required>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+          <label class="col-sm-1 control-label text-right">to</label>
+          <div class="col-sm-2">
+            <input type="text" ng-model="vm.offer.maxDate" name="maxDate"
+                   class="form-control text-right"
+                   required>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Gross Pay</label>
+          <div class="col-sm-2">
+            <input type="text" ng-model="vm.offer.pay" name="pay"
+                   class="form-control text-right"
+                   required>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+          <label class="col-sm-1 control-label text-right">per</label>
+          <div class="col-sm-2">
+            <select ng-model="vm.offer.payPer" name="payPer"
+                   class="form-control"
+                   required>
+              <option>Month</option>
+              <option>Bi-Week</option>
+              <option>Week</option>
+            </select>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
+        </div>
+
+        <hr>
+        <h4><span class="col-sm-2"></span>Accommodation</h4>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Arranged by</label>
+          <div class="col-sm-4">
+            <input type="text" ng-model="vm.offer.lodgingBy" name="lodgingBy"
+                   class="form-control"
+                   required>
+            <ui-validation-messages></ui-validation-messages>
+          </div>
         </div>
 
         <div class="row">
